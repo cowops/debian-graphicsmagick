@@ -1,5 +1,8 @@
 ---
 - name: install graphicsmagick
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - graphicsmagick
+  apt:
+    name: {{ packages }}
+    state: latest
+  vars:
+    packages:
+      - graphicsmagick
